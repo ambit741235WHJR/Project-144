@@ -21,7 +21,7 @@ export default class Home extends Component {
     
     // Fetching the article details from the API
     getArticleDetails = () => {
-        const url = 'https://73df-49-37-45-128.in.ngrok.io/get-article';
+        const url = 'https://afc9-49-37-41-207.in.ngrok.io/get-article';
         axios.get(url)
             .then(response => {
                 let details = response.data.data;
@@ -41,7 +41,7 @@ export default class Home extends Component {
 
     // Storing the liked article details in the API
     likedArticle = () => {
-        const url = 'https://73df-49-37-45-128.in.ngrok.io/post-liked-articles';
+        const url = 'https://afc9-49-37-41-207.in.ngrok.io/post-liked-articles';
         axios.post(url)
             .then(response => {
                 this.getArticleDetails();
@@ -52,7 +52,7 @@ export default class Home extends Component {
 
     // Storing the unliked article details in the API
     unlikedArticle = () => {
-        const url = 'https://73df-49-37-45-128.in.ngrok.io/post-unliked-articles';
+        const url = 'https://afc9-49-37-41-207.in.ngrok.io/post-unliked-articles';
         axios.post(url)
             .then(response => {
                 this.getArticleDetails();
@@ -63,7 +63,7 @@ export default class Home extends Component {
 
     // Storing the did not watched article details in the API
     didNotWatchedArticle = () => {
-        const url = 'https://73df-49-37-45-128.in.ngrok.io/post-did-not-watch-articles';
+        const url = 'https://afc9-49-37-41-207.in.ngrok.io/post-did-not-watch-articles';
         axios.post(url)
             .then(response => {
                 this.getArticleDetails();
@@ -140,7 +140,7 @@ export default class Home extends Component {
                         text: "Article Recommended",
                         style: styles.headerTitle
                       }}
-                      rightComponent={{ icon: "search", color: "#fff" }}
+                      rightComponent={{ icon: "search", color: "#fff", onPress: () => this.props.navigation.navigate("TabNavigator") }}
                       backgroundColor={"#d500f9"}
                       containerStyle={{ flex: 1 }}
                     />
